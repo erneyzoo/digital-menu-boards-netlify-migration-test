@@ -1,8 +1,8 @@
 // node_modules
-import type { NextPage } from 'next'; // Vendor
 import React from 'react';
-import AppRewardPage from './reward';
+import { NextPage } from 'next';
+import ExamplePage from './example';
 
-const HomePage: NextPage = props => <AppRewardPage {...props} />;
+const HomePage: NextPage = () => <ExamplePage />;
 
-export default HomePage;
+export default HomePag;
