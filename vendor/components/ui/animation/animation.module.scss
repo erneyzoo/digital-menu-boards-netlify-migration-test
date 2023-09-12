@@ -1,0 +1,13 @@
+.anim {
+  overflow: hidden;
+
+  canvas,
+  svg {
+    padding: 0 !important;
+    height: 100% !important;
+  }
+
+  canvas {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,117 @@
+@function opacityHEX($percent) {
+  $res: FF;
+  @if $percent == 99  { $res: FC; }
+  @if $percent == 98  { $res: FA; }
+  @if $percent == 97  { $res: F7; }
+  @if $percent == 96  { $res: F5; }
+  @if $percent == 95  { $res: F2; }
+  @if $percent == 94  { $res: F0; }
+  @if $percent == 93  { $res: ED; }
+  @if $percent == 92  { $res: EB; }
+  @if $percent == 91  { $res: E8; }
+  @if $percent == 90  { $res: E6; }
+  @if $percent == 89  { $res: E3; }
+  @if $percent == 88  { $res: E0; }
+  @if $percent == 87  { $res: DE; }
+  @if $percent == 86  { $res: DB; }
+  @if $percent == 85  { $res: D9; }
+  @if $percent == 84  { $res: D6; }
+  @if $percent == 83  { $res: D4; }
+  @if $percent == 82  { $res: D1; }
+  @if $percent == 81  { $res: CF; }
+  @if $percent == 80  { $res: CC; }
+  @if $percent == 79  { $res: C9; }
+  @if $percent == 78  { $res: C7; }
+  @if $percent == 77  { $res: C4; }
+  @if $percent == 76  { $res: C2; }
+  @if $percent == 75  { $res: BF; }
+  @if $percent == 74  { $res: BD; }
+  @if $percent == 73  { $res: BA; }
+  @if $percent == 72  { $res: B8; }
+  @if $percent == 71  { $res: B5; }
+  @if $percent == 70  { $res: B3; }
+  @if $percent == 69  { $res: B0; }
+  @if $percent == 68  { $res: AD; }
+  @if $percent == 67  { $res: AB; }
+  @if $percent == 66  { $res: A8; }
+  @if $percent == 65  { $res: A6; }
+  @if $percent == 64  { $res: A3; }
+  @if $percent == 63  { $res: A1; }
+  @if $percent == 62  { $res: 9E; }
+  @if $percent == 61  { $res: 9C; }
+  @if $percent == 60  { $res: 99; }
+  @if $percent == 59  { $res: 96; }
+  @if $percent == 58  { $res: 94; }
+  @if $percent == 57  { $res: 91; }
+  @if $percent == 56  { $res: 8F; }
+  @if $percent == 55  { $res: 8C; }
+  @if $percent == 54  { $res: 8A; }
+  @if $percent == 53  { $res: 87; }
+  @if $percent == 52  { $res: 85; }
+  @if $percent == 51  { $res: 82; }
+  @if $percent == 50  { $res: 80; }
+  @if $percent == 49  { $res: 7D; }
+  @if $percent == 48  { $res: 7A; }
+  @if $percent == 47  { $res: 78; }
+  @if $percent == 46  { $res: 75; }
+  @if $percent == 45  { $res: 73; }
+  @if $percent == 44  { $res: 70; }
+  @if $percent == 43  { $res: 6E; }
+  @if $percent == 42  { $res: 6B; }
+  @if $percent == 41  { $res: 69; }
+  @if $percent == 40  { $res: 66; }
+  @if $percent == 39  { $res: 63; }
+  @if $percent == 38  { $res: 61; }
+  @if $percent == 37  { $res: 5E; }
+  @if $percent == 36  { $res: 5C; }
+  @if $percent == 35  { $res: 59; }
+  @if $percent == 34  { $res: 57; }
+  @if $percent == 33  { $res: 54; }
+  @if $percent == 32  { $res: 52; }
+  @if $percent == 31  { $res: 4F; }
+  @if $percent == 30  { $res: 4D; }
+  @if $percent == 29  { $res: 4A; }
+  @if $percent == 28  { $res: 47; }
+  @if $percent == 27  { $res: 45; }
+  @if $percent == 26  { $res: 42; }
+  @if $percent == 25  { $res: 40; }
+  @if $percent == 24  { $res: 3D; }
+  @if $percent == 23  { $res: 3B; }
+  @if $percent == 22  { $res: 38; }
+  @if $percent == 21  { $res: 36; }
+  @if $percent == 20  { $res: 33; }
+  @if $percent == 19  { $res: 30; }
+  @if $percent == 18  { $res: 2E; }
+  @if $percent == 17  { $res: 2B; }
+  @if $percent == 16  { $res: 29; }
+  @if $percent == 15  { $res: 26; }
+  @if $percent == 14  { $res: 24; }
+  @if $percent == 13  { $res: 21; }
+  @if $percent == 12  { $res: 1F; }
+  @if $percent == 11  { $res: 1C; }
+  @if $percent == 10  { $res: 1A; }
+  @if $percent == 9   { $res: 17; }
+  @if $percent == 8   { $res: 14; }
+  @if $percent == 7   { $res: 12; }
+  @if $percent == 6   { $res: 0F; }
+  @if $percent == 5   { $res: 0D; }
+  @if $percent == 4   { $res: 0A; }
+  @if $percent == 3   { $res: 08; }
+  @if $percent == 2   { $res: 05; }
+  @if $percent == 1   { $res: 03; }
+  @return $res;
+}
+
+
+@function parseClass($prefix, $name, $num:0, $hover:false) {
+  $name: ".#{$prefix}-#{$name}";
+  @if $num > 0 {
+    $name: "#{$name}-#{$num}";
+  }
+
+  @if $hover {
+    $name: "#{$name}-hover:hover";
+  }
+  @return $name;
+}
+

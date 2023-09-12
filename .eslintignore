@@ -1,0 +1,8 @@
+node_modules
+public
+src/types/_generated_.tsx
+.env
+.env.*
+.idea
+.next
+/out/

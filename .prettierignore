@@ -1,0 +1,15 @@
+# Ignore artifacts:
+node_modules
+.idea
+.vscode
+.next
+.husky
+package.json
+.prettierrc.json
+*.lock
+*.scss
+*.yml
+tsconfig.json
+public
+*.md
+out

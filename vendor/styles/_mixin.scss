@@ -1,0 +1,187 @@
+@import "functions";
+@import "variables";
+@import "src/styles/colours";
+
+@mixin parseContent($name, $key, $value, $opacity: 0) {
+  $end: "";
+
+  @if $opacity > 0 {
+    // $end: opacityHEX($opacity);
+    $opacity: $opacity / 100;
+    $value: rgba($value, $opacity);
+    @debug "opacity: #{$opacity}";
+  }
+  #{$name} {
+    #{$key}: #{$value} !important;
+  }
+}
+
+@mixin parseGroup($prefix, $name, $color, $attr, $hover: false) {
+  @for $i from 0 through 100 {
+    $class: parseClass($prefix, $name, $i, $hover);
+    @include parseContent($class, $attr, $color, $i);
+  }
+}
+
+@mixin develop {
+  box-shadow: 0 0 1pt red;
+}
+
+
+@mixin innerImage {
+  img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+
+@mixin widthAndHeight {
+  $i: 1;
+  $limit: 100;
+  @for $size from $i through $limit {
+    .h-#{$size} {
+      height: unquote("#{$size}%");
+    }
+    .h-min-#{$size} {
+      min-height: unquote("#{$size}%");
+    }
+    .h-max-#{$size} {
+      max-height: unquote("#{$size}%");
+    }
+
+    .vh-#{$size} {
+      height: unquote("#{$size}vh");
+    }
+    .vh-min-#{$size} {
+      min-height: unquote("#{$size}vh");
+    }
+    .vh-max-#{$size} {
+      max-height: unquote("#{$size}vh");
+    }
+
+    .w-#{$size} {
+      width: unquote("#{$size}%");
+    }
+    .w-min-#{$size} {
+      min-width: unquote("#{$size}%");
+    }
+    .w-max-#{$size} {
+      max-width: unquote("#{$size}%");
+    }
+
+    .vw-#{$size} {
+      width: unquote("#{$size}vw");
+    }
+    .vw-min-#{$size} {
+      min-width: unquote("#{$size}vw");
+    }
+    .vw-max-#{$size} {
+      max-width: unquote("#{$size}vw");
+    }
+
+    .size-#{$size} {
+      width: unquote("#{$size}%");
+      height: unquote("#{$size}%");
+    }
+    .size-min-#{$size} {
+      min-width: unquote("#{$size}%");
+      min-height: unquote("#{$size}%");
+    }
+    .size-max-#{$size} {
+      max-width: unquote("#{$size}%");
+      max-height: unquote("#{$size}%");
+    }
+
+    .vs-#{$size} {
+      width: unquote("#{$size}vw");
+      height: unquote("#{$size}vh");
+    }
+    .vs-min-#{$size} {
+      min-width: unquote("#{$size}vw");
+      min-height: unquote("#{$size}vh");
+    }
+    .vs-max-#{$size} {
+      max-width: unquote("#{$size}vw");
+      max-height: unquote("#{$size}vh");
+    }
+  }
+}
+
+
+@mixin FontSizes {
+  @for $size from 8 through 100 {
+    .fs-#{$size}px {
+      font-size: unquote("#{$size}px") !important;
+    }
+  }
+
+  @for $size from 1 through 10 {
+    .fs-#{$size}rem {
+      font-size: unquote("#{$size}rem") !important;
+    }
+    @for $ml from 1 through 9 {
+      .fs-#{$size}x#{$ml}rem {
+        font-size: unquote("#{$size}.#{$ml}rem") !important;
+      }
+    }
+  }
+}
+
+@mixin backgrounds {
+  @each $name, $color in $themeCodes {
+    @include parseGroup("bg", $name, $color, "background-color");
+    @include parseGroup("bg", $name, $color, "background-color", true); // hover
+  }
+}
+
+@mixin borders {
+  @each $name, $color in $themeCodes {
+    @include parseGroup("border", $name, $color, "border-color");
+    @include parseGroup("border", $name, $color, "border-color", true); // hover
+  }
+}
+
+@mixin text {
+  @each $name, $color in $themeCodes {
+    @include parseGroup("text", $name, $color, "color");
+    @include parseGroup("text", $name, $color, "color", true); // hover
+  }
+}
+
+
+@mixin overviewLayers($layers) {
+  @for $i from 1 through $layers {
+    .layer#{$i} {
+      grid-column: 1;
+      grid-row: 1;
+      position: relative;
+      z-index: $i;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+    }
+  }
+}
+
+@mixin scales {
+  @for $i from 0 through 10 {
+
+    @if $i > 0 {
+      .scale-#{$i} {
+        transform: scale($i);
+      }
+    }
+
+    @for $n from 1 through 9 {
+      .scale-#{$i}x#{$n} {
+        transform: scale(unquote("#{$i}.#{$n}"));
+      }
+    }
+  }
+}

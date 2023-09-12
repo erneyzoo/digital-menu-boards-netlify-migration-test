@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box !important;
+
+  * {
+    box-sizing: border-box !important;
+  }
+}
+
+.app-view {
+  
+}
+
+.fill {
+  flex-grow: 1;
+  align-self: stretch;
+  justify-self: stretch;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.horizontal {
+  align-self: stretch;
+}
+
+.vertical {
+  flex-grow: 1;
+}
+
+.leftCol {
+  align-items: flex-start;
+}
+
+.leftRow {
+  justify-content: flex-start;
+}
+
+.rightCol {
+  align-items: flex-end;
+}
+
+.rightRow {
+  justify-content: flex-end;
+}
+
+
+.topRow {
+  align-items: flex-start;
+}
+
+.topCol {
+  justify-content: flex-start;
+}
+
+.bottomRow {
+  align-items: flex-end;
+}
+
+.bottomCol {
+  justify-content: flex-end;
+}
+
+.stretch > * {
+  flex-grow: 1 !important;
+  align-self: stretch !important;
+  justify-self: stretch !important;
+}

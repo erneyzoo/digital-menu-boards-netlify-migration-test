@@ -1,0 +1,169 @@
+$enable-negative-margins: true;
+@import "bootstrap";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+@import "mixin";
+@include backgrounds();
+@include borders();
+@include text();
+@include scales();
+@include widthAndHeight();
+@include FontSizes();
+
+* {
+  box-sizing: border-box !important;
+}
+
+.develop,
+.develop * {
+  box-shadow: 0 0 1pt 1pt red;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-justify-all {
+  text-align: justify-all;
+}
+
+html,
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+}
+
+.app-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .app-row-box,
+  .app-row-cell,
+  .app-row-label,
+  .app-row-icon {
+    padding: .5rem 1rem;
+
+    * {
+      padding: 0;
+    }
+  }
+}
+
+.app-row-cell,
+.app-row-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  @include innerImage()
+}
+
+.app-row-cell {
+  flex-grow: 1;
+}
+
+.app-row-label {
+  max-width: 33.3%;
+  display: flex;
+  align-items: center;
+  @include innerImage()
+}
+
+.app-row-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+*:focus,
+*:active {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+}
+
+.app-row-inner-center {
+  .app-row-box,
+  .app-row-cell,
+  .app-row-label,
+  .app-row-icon {
+    justify-content: center;
+  }
+}
+
+.app-row-start {
+  justify-content: flex-start;
+}
+
+.app-row-center {
+  justify-content: center;
+}
+
+.app-row-end {
+  justify-content: flex-end;
+}
+
+.app-row-p-0,
+.app-row-p-0 div {
+  padding: 0;
+}
+
+
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-content-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.main-under-nav {
+  margin-top: -10vh !important;
+}
+
+.justify-self-start {
+  justify-self: flex-start;
+}
+
+.justify-self-center {
+  justify-self: center;
+}
+
+.justify-self-end {
+  justify-self: flex-end;
+}
+
+.justify-self-stretch {
+  justify-self: stretch;
+}
+
+a {
+  font-size: inherit !important;
+}
+
+.overview {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  box-sizing: border-box !important;
+
+  * {
+    box-sizing: border-box !important;
+  }
+
+  @include overviewLayers(10);
+}
+
+
+.shadow-inner {
+  box-shadow: inset 1pt 1pt 3pt rgba(0, 0, 0, 0.15), 2px 2px 0 white;
+}
+

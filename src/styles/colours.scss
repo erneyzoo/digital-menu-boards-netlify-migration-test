@@ -1,0 +1,31 @@
+@import "~bootstrap/scss/variables";
+/* MICRO-SITE COLORS  */
+$blue1: #AEE2FA;
+$blue2: #213C91;
+$orange: #F9A456;
+$custom: magenta;
+/* CUSTOMIZE BOOTSTRAP COLORS  */
+//$primary: $blue1;
+//$secondary: gray;
+//$info: $blue2;
+//$warning: $orange;
+//$success: #6b8e23;
+//$danger: #8b0000;
+//$dark: #282828;
+//$light: #f1f1f2;
+
+$themeCodes: (
+        primary :$primary,
+        secondary :$secondary,
+        info: $info,
+        warning :$warning,
+        success: $success,
+        danger :$danger,
+        dark :$dark,
+        light :$light,
+        black :#000000,
+        white :#FFFFFF,
+        muted :$gray-600,
+        custom: $custom,
+  // INCLUDE ANY EXTRA COLOUR
+);
